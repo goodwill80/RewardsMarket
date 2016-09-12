@@ -20,7 +20,7 @@ var crypto = require('crypto');
     history: [{
       date: Date,
       paid: { type: Number, default: 0},
-      // item: { type: Schema.Types.ObjectId, ref: ''}
+      item: { type: Schema.Types.ObjectId, ref: 'Product'}
     }]
   });
 

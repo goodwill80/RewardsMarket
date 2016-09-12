@@ -4,6 +4,15 @@
   <div class="row">
     <div class="col-lg-6">
 
+      <% if (message.length > 0) { %>
+        <div class="alert alert-success alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert" arial-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <%= message %>
+          </div>
+          <% } %>
+
 
         <% for (var i = 0; i < foundCart.items.length; i++) { %>
           <div class="list-group">
@@ -43,4 +52,7 @@
             <span class="list-group-item">
               <h4>Total: $<span class="totalPrice"><%= foundCart.total %></span></h4>
 
-      
+            </div>
+          </div>
+        </div>
+      </div>

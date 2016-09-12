@@ -32,4 +32,63 @@ router.get('/:name', function(req, res, next) {
     res.json({ message: 'Success' });
 });
 
+
+//Get all Products
+router.get('/rewards', function(req, res, next){
+  Product.find(function(err, products){
+    if(err){
+      res.send(err);
+    } else {
+      res.json(products);
+    }
+  });
+});
+
+// Get Single Product
+// router.get('/rewards/:id', function(req, res, next){
+//   var id = req.params.id;
+//   Product.findOne({_id: id}, function(err, product) {
+//     if (err) {
+//       res.send(err);
+//     } else {
+//       res.json(product);
+//     }
+//   });
+// });
+
+//create and save product
+router.post('/rewards', function(req, res, next){
+var product = new Product(req.body);
+product.save(function(err){
+  if (err) return next (err);
+  res.json(product)
+});
+});
+
+
+//update product
+// router.put('/rewards/:id', function(req, res, next){
+//   var id = req.params.id;
+//   Product.findByIdAndUpdate({_id: id}, req.body, function(err, product) {
+//         if (err) {
+//           return next(err);
+//         } else {
+//           res.json(product);
+//         }
+//       });
+//     });
+
+//delete product
+// router.delete('/rewards/:id', function(req, res, next){
+//   var id = req.params.id;
+//
+//   Product.findOne({_id: id}, function(err, product) {
+//     product.remove();
+//     if (err) return next(err);
+//     res.json(product);
+//   });
+//
+// });
+
+
 module.exports = router;

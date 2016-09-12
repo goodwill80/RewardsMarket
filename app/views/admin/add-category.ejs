@@ -1,0 +1,31 @@
+<%- layout('layout') -%>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
+            <legend><i class="glyphicon glyphicon-globe"></i></a>Add a new category</legend>
+            <form method="post" class="form" role="form">
+            <label for="name">Name</label>
+            <input class="form-control" name="name" placeholder="Category" type="text" />
+            <br />
+            <br />
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+              Submit</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+<% if (message.length > 0) { %>
+  <div class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" arial-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <%= message %>
+    </div>
+    <% } %>
+  </div>

@@ -3,5 +3,46 @@ body{
 }
 
 #navbar-gap {
-  margin-top: -6%;
+  margin-top: -4%;
+  height: 200px;
+}
+
+
+#productphoto {
+  width: 150%;
+  height: 150%;
+}
+
+.jumbotron {
+position: relative;
+background: url("http://www.uob.com.sg/privilegebanking/assets/images/landing/pv/slideshow/large/4.jpg") no-repeat center center;
+width:100%;
+height: 190%;
+background-size: 100% 100%;
+}
+
+
+/*signup page*/
+.signupcover {
+  color: rgb(255, 255, 255);
+    margin-top: -50px;
+    height: 740px;
+    background: url("http://dyedesigns.com/golf/wp-content/uploads/2010/01/e-PoundRidgeGC5bSunset1.jpg") no-repeat scroll 0px 100% / cover transparent;
+}
+
+#signupform {
+  margin-top: 80px;
+  margin-left: 150px;
+}
+
+/*login page*/
+.logincover{
+  color: rgb(255, 255, 255);
+    margin-top: -48px;
+    height: 748px;
+    background: url("http://www.italianluxuryboat.com/wp-content/uploads/2014/01/Italian-Luxury-boat-22.jpg") no-repeat scroll 0px 100% / cover transparent;
+}
+
+#loginform {
+  margin-top: 80px;
 }

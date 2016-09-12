@@ -2,56 +2,131 @@
 
 
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div id="navbar-gap" class="jumbotron" id="navbar-gap">
-  <div class="container">
-    <h1> Shop Smart, Save Big!</h1>
-    <p>Starting point to create something more unique</p>
-    <% if (!user) { %>
-    <p><a class="btn btn-primary btn-lg" href="/signup" role="button">Signup &raquo;</a></p>
-    <% } else { %>
-      <h4>Start Shopping</h4>
-      <% } %>
+<div class="container">
+
+  <div id="navbar-gap" class="jumbotron" id="navbar-gap">
+    <div class="container">
+      <h2>Your world, your way!</h2>
+      <p>Starting point to create something more unique</p>
+      <% if (!user) { %>
+      <p><a class="btn btn-primary btn-lg" href="/signup" role="button">Signup &raquo;</a></p>
+      <% } else { %>
+        <h4>Start Shopping</h4>
+        <% } %>
+    </div>
   </div>
+
+
+
+  <div class="panel.panel-default">
+  <div class="panel-heading">
+   <h3 class="panel-title">Lifestyles</h3>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+<div class="row">
+  <% for (var i = 0; i < 4; i++) { %>
+  <div class="col-md-3">
+    <a href="/reward/<%= products[i]._id %>">
+      <div class="thumbnail">
+        <img src="<%= products[i].image %>">
+        <div class="caption">
+          <h3><%= products[i].name %></h3>
+          <p><%= products[i].category.name %></h3>
+          <!-- <p>$<%= products[i].price %></p>
+          <p>$<%= products[i].points %></p> -->
+          <p><a class="btn btn-warning" href="/reward/<%= products[i]._id %>" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <% } %>
+</div>
+</div>
 </div>
 
-<!-- <div class="container">
+<div class="panel.panel-default">
+<div class="panel-heading">
+ <h3 class="panel-title">Travel</h3>
+</div>
 
-  <div class="row">
-    <div class="col-md-4">
-      <h3>Start your search here</h3>
-      <p>Signup to start Buying</p>
-    </div>
-    <div class="col-md-4">
-      <h3>Look for Smart items?</h3>
-      <p>These will appear across the site as you add to your cart</p>
-
-   </div>
-    <div class="col-md-4">
-      <h3>Build a smart cart</h3>
-      <p>The more smart items you buy together, the more you save :)</p>
-    </div>
-  </div> -->
-
-  <div class="container">
-
-    <div class="row">
-
-      <% for (var i = 0; i < 15; i++) { %>
-      <div class="col-md-3">
-        <a href="/reward/<%= products[i]._id %>">
-          <div class="thumbnail">
-            <img src="<%= products[i].image %>">
-            <div class="caption">
-              <h3><%= products[i].name %></h3>
-              <p><%= products[i].category.name %></h3>
-              <p>$<%= products[i].price %></p>
-              <p>$<%= products[i].points %></p>
-              <p><a class="btn btn-warning" href="/reward/<%= products[i]._id %>" role="button">View details &raquo;</a></p>
-            </div>
-          </div>
-        </a>
+<div class="panel panel-default">
+  <div class="panel-body">
+<div class="row">
+<% for (var i = 0; i < 4; i++) { %>
+<div class="col-md-3">
+  <a href="/reward/<%= products[i+2]._id %>">
+    <div class="thumbnail">
+      <img src="<%= products[i+2].image %>">
+      <div class="caption">
+        <h3><%= products[i+2].name %></h3>
+        <p><%= products[i+2].category.name %></h3>
+        <!-- <p>$<%= products[i].price %></p>
+        <p>$<%= products[i].points %></p> -->
+        <p><a class="btn btn-warning" href="/reward/<%= products[i+2]._id %>" role="button">View details &raquo;</a></p>
       </div>
-      <% } %>
     </div>
-  </div>
+  </a>
+</div>
+<% } %>
+</div>
+</div>
+</div>
+
+<div class="panel.panel-default">
+<div class="panel-heading">
+ <h3 class="panel-title">Dinning</h3>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">
+<div class="row">
+<% for (var i = 0; i < 4; i++) { %>
+<div class="col-md-3">
+  <a href="/reward/<%= products[i+1]._id %>">
+    <div class="thumbnail">
+      <img src="<%= products[i+1].image %>">
+      <div class="caption">
+        <h3><%= products[i+1].name %></h3>
+        <p><%= products[i+1].category.name %></h3>
+        <!-- <p>$<%= products[i].price %></p>
+        <p>$<%= products[i].points %></p> -->
+        <p><a class="btn btn-warning" href="/reward/<%= products[i+1]._id %>" role="button">View details &raquo;</a></p>
+      </div>
+    </div>
+  </a>
+</div>
+<% } %>
+</div>
+</div>
+</div>
+
+</div>
+
+
+  <!-- <div class="container">
+    <div class="panel.panel-default">
+    <div class="panel-heading">
+     <h3 class="panel-title">Lifestyles</h3>
+    </div>
+    <% for (var i = 0; i < 5; i++) { %>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-3">
+          <div>
+          <img class="thumbnail" src="<%= products[i].image %>">
+          <h3><%= products[i].name %></h3>
+          <p><%= products[i].category.name %></h3>
+          <p>$<%= products[i].price %></p>
+          <p>$<%= products[i].points %></p>
+            <p><a class="btn btn-warning" href="/reward/<%= products[i]._id %>" role="button">View details &raquo;</a></p>
+       </div>
+
+      </div>
+         <% } %>
+    </div> -->
+
+  <!-- </div>
+
+</div>
+</div> -->

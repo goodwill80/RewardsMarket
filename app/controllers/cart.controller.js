@@ -5,10 +5,20 @@ var User = require('mongoose').model('User');
 
 module.exports = {
 
+cartpage: function(req, res, next){
+  Cart
+    .findOne({ owner: req.user._id })
+    .populate('items.item')
+    .exec(function(err, foundCart) {
+      if (err) return next(err);
+      res.render('main/cart', {
+        foundCart: foundCart,
+        message: req.flash('remove')
+  })
+})
+}
 
 
 
 
-
-  
 }

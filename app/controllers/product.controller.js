@@ -1,5 +1,7 @@
 var Category = require('mongoose').model('Category');
 var Product = require('mongoose').model('Product');
+var Cart = require('mongoose').model('Cart');
+var User = require('mongoose').model('User');
 
 module.exports = {
 
@@ -21,7 +23,23 @@ module.exports = {
     res.render('main/product', {product: product
     })
   })
-}
+},
+
+  postCart: function(req, res, next) {
+    Cart.findOne({ owner: req.user._id }, function(err, cart){
+      cart.items.push({
+        item: req.body.reward_id,
+        price: parseFloat(req.body.priceValue),
+        quantity: parseInt(req.body.quantity)
+      })
+      cart.total = (cart.total + parseFloat(req.body.priceValue)).toFixed(2);
+
+      cart.save(function(err) {
+        if(err) return next(err);
+        return res.redirect('/cart');
+      })
+    })
+  }
 
 
 

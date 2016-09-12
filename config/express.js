@@ -104,11 +104,12 @@ module.exports = function() {
   app.use('/faker', apiRoutes);
 
 
-  require('../app/routes/routes')(app);
+
   require('../app/routes/static.routes')(app);
   require('../app/routes/user.routes')(app);
   require('../app/routes/admin.routes')(app);
   require('../app/routes/product.routes')(app);
+  require('../app/routes/cart.routes')(app);
   app.use(express.static('./public'));
 
   return app;

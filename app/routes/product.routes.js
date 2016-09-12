@@ -9,4 +9,7 @@ app.route('/rewards/:id')
 //single reward page
 app.route('/reward/:id')
 .get(productController.getSinglePage)
+
+app.route('/reward/:reward_id')
+.post(productController.postCart)
 }

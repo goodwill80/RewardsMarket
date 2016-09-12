@@ -12,8 +12,7 @@ cartpage: function(req, res, next){
     .exec(function(err, foundCart) {
       if (err) return next(err);
       res.render('main/cart', {
-        foundCart: foundCart,
-        message: req.flash('remove')
+        foundCart: foundCart
   })
 })
 }

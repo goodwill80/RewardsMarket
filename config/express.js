@@ -100,8 +100,8 @@ module.exports = function() {
   app.set('view engine', 'ejs')
   // app.use(expressLayouts);
 
-  var apiRoutes = require('../faker/faker');
-  app.use('/faker', apiRoutes);
+  var apiRoutes = require('../api/api');
+  app.use('/api', apiRoutes);
 
 
 

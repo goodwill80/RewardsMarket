@@ -44,7 +44,7 @@ router.get('/rewards', function(req, res, next){
     }
   });
 });
-
+//PRODUCT API ROUTES
 // Get Single Product
 router.get('/rewards/:id', function(req, res, next){
   var id = req.params.id;

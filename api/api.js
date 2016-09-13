@@ -3,8 +3,10 @@ var async = require('async');
 var faker = require('faker');
 var CategoryModel = require('../app/models/category.model');
 var ProductModel = require('../app/models/product.model');
+var UserModel = require('../app/models/user.model');
 var Category = require('mongoose').model('Category');
 var Product = require('mongoose').model('Product');
+var User = require('mongoose').model('User');
 var mongoose = require('mongoose');
 
 
@@ -34,6 +36,7 @@ var mongoose = require('mongoose');
 // });
 
 
+//PRODUCT API ROUTES
 //Get all Products
 router.get('/rewards', function(req, res, next){
   Product.find(function(err, products){
@@ -44,7 +47,7 @@ router.get('/rewards', function(req, res, next){
     }
   });
 });
-//PRODUCT API ROUTES
+
 // Get Single Product
 router.get('/rewards/:id', function(req, res, next){
   var id = req.params.id;
@@ -90,6 +93,51 @@ router.delete('/rewards/:id', function(req, res, next){
   });
 
 });
+
+// USER Routes
+//Get all users
+router.get('/users', function(req, res, next){
+  User.find(function(err, users){
+    if(err){
+      res.send(err);
+    } else {
+      res.json(users);
+    }
+  });
+});
+
+//Get a single user router.get('/rewards/:id', function(req, res, next){
+router.get('/users/:id', function(req, res, next){
+  var id = req.params.id;
+  User.findOne({_id: id}, function(err, user) {
+    if (err) {
+      res.send(err);
+    } else {
+      res.json(user);
+    }
+  });
+});
+
+//create a single user
+router.post('/users', function(req, res, next){
+var user = new User(req.body);
+user.save(function(err){
+  if (err) return next (err);
+  res.json(user)
+});
+});
+
+//update a single user
+router.put('/users/:id', function(req, res, next){
+  var id = req.params.id;
+  User.findByIdAndUpdate({_id: id}, req.body, function(err, user) {
+        if (err) {
+          return next(err);
+        } else {
+          res.json(user);
+        }
+      });
+    });
 
 
 module.exports = router;

@@ -10,30 +10,6 @@ var User = require('mongoose').model('User');
 var mongoose = require('mongoose');
 
 
-// router.get('/:name', function(req, res, next) {
-//     async.waterfall([
-//       function(callback) {
-//         Category.findOne({ name: req.params.name }, function(err, category) {
-//           if (err) return next(err);
-//           callback(null, category);
-//         });
-//       },
-//
-//       function(category, callback) {
-//         for (var i = 0; i < 2 ; i++) {
-//           var product = new Product();
-//           product.category = category._id;
-//           product.name = faker.commerce.productName();
-//           product.price = faker.commerce.price();
-//           product.points = faker.random.number();
-//           product.image = faker.image.image();
-//
-//           product.save();
-//         }
-//       }
-//     ]);
-//     res.json({ message: 'Success' });
-// });
 
 
 //PRODUCT API ROUTES
@@ -123,7 +99,7 @@ router.post('/users', function(req, res, next){
 var user = new User(req.body);
 user.save(function(err){
   if (err) return next (err);
-  res.json(user)
+  res.json(user);
 });
 });
 
@@ -138,6 +114,18 @@ router.put('/users/:id', function(req, res, next){
         }
       });
     });
+
+  router.delete('/users/:id', function(req, res, next){
+    var id = req.params.id;
+
+    User.findOne({_id: id}, function(err, user) {
+    User.remove();
+    if (err) return next(err);
+    res.json(user);
+      });
+
+    });
+
 
 
 module.exports = router;

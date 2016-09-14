@@ -51,3 +51,9 @@ background-size: 100% 100%;
 #loginform {
   margin-top: 80px;
 }
+
+
+#thumbimage {
+  width: 330px;
+  height: 260px;
+}

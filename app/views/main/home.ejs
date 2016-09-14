@@ -5,17 +5,20 @@
 <div class="container">
 
   <div id="navbar-gap" class="jumbotron" id="navbar-gap">
-    <div class="container">
-      <h2>Your world, your way!</h2>
-      <p>Starting point to create something more unique</p>
+    <div class="containerjumbo">
+      <h2 class="jumbotext">Your world, your way!</h2>
+      <p class="jumbotext">Starting point to create something more unique</p>
       <% if (!user) { %>
-      <p><a class="btn btn-primary btn-lg" href="/signup" role="button">Signup &raquo;</a></p>
+      <p><a class="btn btn-primary btn-md" href="/signup" role="button">Signup &raquo;</a></p>
       <% } else { %>
-        <h4>Start Shopping</h4>
+        <h4 class="jumbotext">Start Shopping</h4>
         <% } %>
     </div>
   </div>
 
+  <!-- <div class="container">
+    <img src="https://daisiesinbloomblog.files.wordpress.com/2013/03/2012090356775969.jpg">
+  </div> -->
 
 
   <div class="panel.panel-default">

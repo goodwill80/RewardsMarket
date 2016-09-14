@@ -8,6 +8,7 @@ module.exports = function(app) {
 	app.route('/about')
 	.get(staticController.about)
 
-
+	app.route('/contactus')
+	.get(staticController.contactus)
 
  };

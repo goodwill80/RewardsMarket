@@ -18,8 +18,11 @@ module.exports = {
 
   about: function(req, res) {
     res.render('main/about');
-  }
+  },
 
+  contactus: function(req, res){
+      res.render('main/contactus');
+  }
 
 
 }

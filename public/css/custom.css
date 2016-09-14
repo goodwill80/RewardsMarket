@@ -17,19 +17,47 @@ body{
   width: 150%;
   height: 100%;
 }
-
+/*http://wearesuper.sg/imageferebee/stewart064.jpg*/
 .jumbotron {
 position: relative;
 background: url("https://daisiesinbloomblog.files.wordpress.com/2013/03/2012090356775969.jpg") no-repeat center center;
 width:100%;
 height: 300%;
 background-size: 100% 100%;
+
+}
+
+#jumbo2 {
+  position: relative;
+  background: url("https://www.citibank.com.sg/cpc/images/PC/dtpBg4.jpg") no-repeat center center;
+  width:100%;
+  height: 300%;
+  background-size: 100% 100%;
 }
 
 .jumbotext {
   color: white;
+  background: rgba(0, 0, 0, 0.5);
+  font-family: 'Playball', cursive;
 }
 
+.jumbo2text{
+  width: 50%;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  font-family: 'Playball', cursive;
+}
+
+.font {
+  width: 30%;
+}
+
+#inner {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 40px;
+    font-family: 'Cinzel Decorative', cursive;
+}
 
 /*signup page*/
 .signupcover {

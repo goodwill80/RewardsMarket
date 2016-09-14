@@ -4,42 +4,43 @@
 
 <div class="container">
 
+
+
   <div id="navbar-gap" class="jumbotron" id="navbar-gap">
     <div class="containerjumbo">
+      <div class="font">
       <h2 class="jumbotext">Your world, your way!</h2>
-      <p class="jumbotext">Starting point to create something more unique</p>
+      <p class="jumbotext">Indulge on life's journey</p>
       <% if (!user) { %>
-      <p><a class="btn btn-primary btn-md" href="/signup" role="button">Signup &raquo;</a></p>
+      <p><a class="btn btn-default btn-md" href="/signup" role="button">Signup &raquo;</a></p>
       <% } else { %>
         <h4 class="jumbotext">Start Shopping</h4>
         <% } %>
+      </div>
     </div>
   </div>
 
+  <div id="outer" style="width:100%">
+  <div id="inner">Your Unique Service Concierge</div>
+</div>
   <!-- <div class="container">
     <img src="https://daisiesinbloomblog.files.wordpress.com/2013/03/2012090356775969.jpg">
   </div> -->
 
 
-  <div class="panel.panel-default">
-  <div class="panel-heading">
-   <h3 class="panel-title">Lifestyles</h3>
-  </div>
 
   <div class="panel panel-default">
     <div class="panel-body">
 <div class="row">
-  <% for (var i = 0; i < 4; i++) { %>
-  <div class="col-md-3">
+  <% for (var i = 0; i < 3; i++) { %>
+  <div class="col-md-4">
     <a href="/reward/<%= products[i]._id %>">
       <div class="thumbnail">
         <img src="<%= products[i].image %>">
         <div class="caption">
           <h3><%= products[i].name %></h3>
           <p><%= products[i].category.name %></h3>
-          <!-- <p>$<%= products[i].price %></p>
-          <p>$<%= products[i].points %></p> -->
-          <p><a class="btn btn-warning" href="/reward/<%= products[i]._id %>" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-info" href="/reward/<%= products[i]._id %>" role="button">View details &raquo;</a></p>
         </div>
       </div>
     </a>
@@ -49,12 +50,20 @@
 </div>
 </div>
 
-<div class="panel.panel-default">
+<div id="jumbo2" class="jumbotron">
+  <a href="/login">
+              <h2 class="jumbo2text">Reward yourself</h2>
+              <p class="jumbo2text">"Helping you to celebrete life's success to the fullest"</p>
+            </a>
+            </div>
+
+
+<!-- <div class="panel.panel-default">
 <div class="panel-heading">
  <h3 class="panel-title">Travel</h3>
-</div>
+</div> -->
 
-<div class="panel panel-default">
+<!-- <div class="panel panel-default">
   <div class="panel-body">
 <div class="row">
 <% for (var i = 0; i < 4; i++) { %>
@@ -65,8 +74,6 @@
       <div class="caption">
         <h3><%= products[i+2].name %></h3>
         <p><%= products[i+2].category.name %></h3>
-        <!-- <p>$<%= products[i].price %></p>
-        <p>$<%= products[i].points %></p> -->
         <p><a class="btn btn-warning" href="/reward/<%= products[i+2]._id %>" role="button">View details &raquo;</a></p>
       </div>
     </div>
@@ -92,8 +99,6 @@
       <div class="caption">
         <h3><%= products[i+1].name %></h3>
         <p><%= products[i+1].category.name %></h3>
-        <!-- <p>$<%= products[i].price %></p>
-        <p>$<%= products[i].points %></p> -->
         <p><a class="btn btn-warning" href="/reward/<%= products[i+1]._id %>" role="button">View details &raquo;</a></p>
       </div>
     </div>
@@ -102,7 +107,7 @@
 <% } %>
 </div>
 </div>
-</div>
+</div> -->
 
 </div>
 

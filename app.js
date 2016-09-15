@@ -1,4 +1,4 @@
-// MY MAIN APP JS
+// MY MAIN APP 
 
 var express = require('./config/express');
 var mongoose = require('./config/mongoose');

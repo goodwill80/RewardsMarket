@@ -6,17 +6,25 @@
         <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
             <legend><i class="glyphicon glyphicon-globe"></i></a> Be our prestige member!</legend>
             <form method="post" class="form" role="form">
+              <img id="vip" src="http://files.site-fusion.co.uk/webfusion150560/image/vip.jpg">
             <div class="row">
                 <div class="col-xs-6 col-md-6">
                   <label for="name">Name</label>
                     <input class="form-control" name="name" placeholder="Your Name" type="text"
                         required autofocus />
+                        <label for="dob">Date of Birth</label>
+                          <input class="form-control" name="dob" placeholder="date of birth" type="integer"
+                              required autofocus />
                 </div>
             </div>
             <label for="email">Email</label>
-            <input class="form-control" name="email" placeholder="Your Email" type="email" />
+            <input class="form-control" name="email" placeholder="Your Email" type="text" />
+            <label for="address">address</label>
+            <input class="form-control" name="address" placeholder="Your Address" type="text" />
             <label for="password">Password</label>
-            <input class="form-control" name="password" placeholder="New Password" type="password" />
+            <input class="form-control" name="password" placeholder="New Password" type="text" />
+            <label for="image">Image</label>
+            <input class="form-control" name="picture" placeholder="your image" type="text" />
             <br />
             <br />
             <button class="btn btn-lg btn-primary btn-block" type="submit">
@@ -26,6 +34,12 @@
 
     </div>
 </div>
+<br><br>
+<div class="quote">
+<p>“You've gotta dance like there's nobody watching, Love like you'll never be hurt, Sing like there's nobody listening, And live like it's heaven on earth.”</p>
+<strong>― William W. Purkey</strong>
+</div>
+<div class"author"></div>
 
 <% if (errors.length > 0) { %>
   <div class="alert alert-danger alert-dismissible">

@@ -6,11 +6,16 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
             <legend><i class="glyphicon glyphicon-globe"></i></a>Edit Profile</legend>
+            <img class="img img-center" src="<%= user.profile.picture %>" alt="">
             <form method="post" class="form" role="form">
             <label for="name">Name</label>
-            <input class="form-control" name="name" value='<%= user.profile.name %>' type="name" />
+            <input class="form-control" name="name" value='<%= user.profile.name %>' type="text" />
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" name="email" aria-describedby="email" value="<%= user.email %>">
             <label for="address">Address</label>
-            <input class="form-control" name="address"  value='<%= user.address %>' type="address" />
+            <input class="form-control" name="address"  value='<%= user.address %>' type="text"/>
+            <label for="picture">Image</label>
+            <input class="form-control" name="picture"  value='<%= user.profile.picture %>' type="text"/>
             <br />
             <br />
             <button class="btn btn-lg btn-primary btn-block" type="submit">

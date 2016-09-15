@@ -1,6 +1,30 @@
 <% layout('layout') -%>
 
 <div class="container">
+
+  <div id="navbar-gap" class="jumbotron" id="navbar-gap">
+    <div class="containerjumbo">
+      <div class="font">
+      <h2 class="jumbotext">Your world, your way!</h2>
+      <p class="jumbotext">Indulge on life's journey</p>
+      <% if (!user) { %>
+      <p><a class="btn btn-default btn-md" href="/signup" role="button">Signup &raquo;</a></p>
+      <% } else { %>
+        <h4 class="jumbotext">Start Shopping</h4>
+        <% } %>
+      </div>
+    </div>
+  </div>
+
+  <div id="outer" style="width:100%">
+  <div id="inner">We would love to hear from you</div>
+</div>
+
+
+
+
+
+
 <div id="wufoo-z1knfodc1il6v16">
 Fill out my <a href="https://goodwill80.wufoo.com/forms/z1knfodc1il6v16">online form</a>.
 </div>

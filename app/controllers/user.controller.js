@@ -21,7 +21,11 @@ module.exports = {
         user.profile.name = req.body.name;
         user.email = req.body.email;
         user.password = req.body.password;
-        user.profile.picture = user.gravatar();
+        user.profile.picture = req.body.picture;
+        user.profile.dob = req.body.dob;
+        user.address = req.body.address;
+        user.membership = req.body.membership;
+        // user.profile.picture = user.gravatar();
 
         User.findOne({email: req.body.email}, function(err, existingUser){
 
@@ -86,6 +90,8 @@ module.exports = {
 
       if(req.body.name) user.profile.name = req.body.name;
       if(req.body.address) user.address = req.body.address;
+      if(req.body.email) user.email = req.body.email;
+      if(req.body.picture) user.profile.picture = req.body.picture;
 
       user.save(function(err){
         if (err) return next (err);

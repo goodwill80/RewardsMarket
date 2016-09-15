@@ -28,7 +28,20 @@
 module.exports = function() {
   var app = express();
 
-
+  // app.use(function(req, res, next) {
+  //     var err = null;
+  //     try {
+  //         decodeURIComponent(req.path)
+  //     }
+  //     catch(e) {
+  //         err = e;
+  //     }
+  //     if (err){
+  //         console.log(err, req.url);
+  //         return res.redirect(['https://', req.get('Host'), '/404'].join(''));
+  //     }
+  //     next();
+  // });
 
   // initialize the required module
   if ( !process.env.NODE_ENV || process.env.NODE_ENV === 'development') {

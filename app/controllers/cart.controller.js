@@ -22,6 +22,7 @@ remove: function(req, res, next) {
     foundCart.items.pull(String(req.body.item));
 
     foundCart.total = (foundCart.total - parseFloat(req.body.price)).toFixed(2);
+    foundCart.totalPoints = (foundCart.total - parseInt(req.body.points));
     foundCart.save(function(err, found){
       if (err) return next(err);
       req.flash('remove',"Successfully removed");

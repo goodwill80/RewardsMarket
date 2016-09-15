@@ -96,12 +96,25 @@ router.get('/users/:id', function(req, res, next){
 
 //create a single user
 router.post('/users', function(req, res, next){
-var user = new User(req.body);
+var user = new User();
+user.profile.name = req.body.name;
+user.email = req.body.email;
+user.password = req.body.password;
+user.profile.picture = req.body.picture;
+user.profile.dob = req.body.dob;
+user.address = req.body.address;
+user.membership = req.body.membership;
+user.password = req.body.password;
+user.points = req.body.points;
 user.save(function(err){
   if (err) return next (err);
   res.json(user);
 });
 });
+
+
+
+
 
 //update a single user
 router.put('/users/:id', function(req, res, next){
@@ -125,6 +138,28 @@ router.put('/users/:id', function(req, res, next){
       });
 
     });
+
+
+
+//Get all Categories
+router.get('/category', function(req, res, next){
+  Category.find(function(err, cat){
+    if (err){
+      res.send(err);
+    } else {
+      res.json(cat);
+    }
+  });
+});
+
+    //Create New Category
+    router.post('/category', function(req, res, next) {
+      var cat = new Category(req.body);
+      cat.save(function(err){
+        if (err) return (err);
+        res.json(cat);
+      })
+    })
 
 
 

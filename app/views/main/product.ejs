@@ -26,15 +26,15 @@
 
         <div class="form-group">
           <input type="hidden" name="product_id" id="quantity" value="<%= product._id %>"></input>
-          <!-- <input type="hidden" name="pointHidden" id="pointHidden" value="<%= product.points %>"></input> -->
+          <input type="hidden" name="pointHidden" id="pointHidden" value="<%= product.points %>"></input>
           <input type="hidden" name="priceHidden" id="priceHidden" value="<%= product.price %>"></input>
           <br>
           <label for="item">Product</label>
           <input type="text" name="item" class="form-control" value="<%= product.name %>"></input>
           <label for="priceValue">SGD$</label>
           <input type="text" name="priceValue" id="priceValue" class="form-control" value="<%= product.price %>"></input>
-          <!-- <label for="point">Points Required</label>
-          <input type="text" name="points" id="points" class="form-control" value="<%= product.points %> points"></input> -->
+          <label for="point">Points Required</label>
+          <input type="text" name="points" id="points" class="form-control" value="<%= product.points %> points"></input>
         </div>
 
         <% if (user)  { %>

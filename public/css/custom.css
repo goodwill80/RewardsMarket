@@ -2,10 +2,44 @@ body{
   padding-top: 100px;
 }
 
+#panelprofile {
+  padding: 20px;
+  width: 30%;
+}
+
 .product-image {
   width: 100%;
 }
 
+.img {
+  width: 70%;
+  height: 40%;
+}
+
+#quoteimg{
+  width: 40%;
+  height: 40%;
+}
+
+.profilequote {
+  float: right;
+  margin-right: 120px;
+  color: black;
+  font-family: 'Crimson Text', serif;
+  width: 58%;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.quote {
+  float: right;
+  margin-right: 120px;
+  color: white;
+  font-family: 'Crimson Text', serif;
+  width: 30%;
+  font-size: 18px;
+  margin-top: -40px;
+}
 
 #navbar-gap {
   margin-top: -4%;
@@ -68,24 +102,51 @@ background-size: 100% 100%;
 }
 
 #signupform {
-  margin-top: 80px;
-  margin-left: 150px;
+  margin-top: 25px;
+  margin-left: 100px;
+  width: 110%;
 }
 
 /*login page*/
 .logincover{
-  color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     margin-top: -48px;
     height: 748px;
     background: url("http://www.italianluxuryboat.com/wp-content/uploads/2014/01/Italian-Luxury-boat-22.jpg") no-repeat scroll 0px 100% / cover transparent;
 }
 
+.cartcover {
+    /*color: rgb(255, 255, 255);*/
+    margin-top: -50px;
+    height: 740px;
+    background: url("http://www.freewallpaperfullhd.com/wp-content/uploads/2015/03/beautiful-hd-desktop-background-wallpapers-of-celebrations_2_21004.jpg") no-repeat scroll 0px 100% / cover transparent;
+}
+
+#container {
+  margin-top: 50px;
+}
+
+
+
 #loginform {
   margin-top: 80px;
+}
+
+#vip {
+  10%;
 }
 
 
 #thumbimage {
   width: 330px;
   height: 260px;
+}
+
+#vip {
+  width: 20%;
+  height: 10%;
+}
+
+label {
+  color: black;
 }

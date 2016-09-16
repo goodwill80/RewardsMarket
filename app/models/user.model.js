@@ -15,7 +15,7 @@ var crypto = require('crypto');
       dob: { type: Date, default: ''},
       picture: { type: String, default: ''}
     },
-    points: Number,
+    points: {type: Number, default: 1000},
     membership: [ {type: String} ],
     address: { type: String, default: ''},
     history: [{

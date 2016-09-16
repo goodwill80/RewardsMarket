@@ -26,7 +26,7 @@ module.exports = function(passport) {
       if (!user) return done(null, false, req.flash('errorMessage', 'No user found.'));
 
       // Check if the password is correct
-      if (!user.comparePassword(password)) return done(null, false, req.flash('errorMessage', 'Oops wrong password!'));
+      if (!user.comparePassword(password)) return done(null, false, req.flash('errorMessage', 'Please check your password!'));
 
       return done(null, user);
     });

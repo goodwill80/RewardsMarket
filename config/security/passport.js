@@ -33,6 +33,7 @@ module.exports = function(passport) {
   }));
 }
 
+//check for authentication
 exports.isAuthenticated = function(req, res, next) {
   if (req.isAuthenticated()) {
     return next();

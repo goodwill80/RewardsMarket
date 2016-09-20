@@ -41,8 +41,22 @@ postCart: function(req, res, next) {
       return res.redirect('/cart');
     })
   })
-}
+},
 
+payment: function(req, res, next) {
+
+  var stripeToken = req.body.stripeToken;
+  var currentCharges = Math.round(req.body.stripeMoney * 100);
+  stripe.customer.create({
+    source: stripeToken,
+  }).then(function(customer) {
+    return stripe.charges.create ({
+      amount: currentCharges,
+      currency: 'sgd',
+      customer: customer.id
+    });
+  });
+}
 
 
 

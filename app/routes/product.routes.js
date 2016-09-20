@@ -12,4 +12,9 @@ app.route('/reward/:id')
 
 app.route('/reward/:reward_id')
 .post(productController.postCart)
+
+app.route('/payment')
+.post(productController.payment)
+
+
 }

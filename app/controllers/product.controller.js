@@ -2,6 +2,8 @@ var Category = require('mongoose').model('Category');
 var Product = require('mongoose').model('Product');
 var Cart = require('mongoose').model('Cart');
 var User = require('mongoose').model('User');
+var stripe = require('stripe')('sk_test_9kiC8pycQEJhDnUbKD4Cgp9V');
+var async = require('async');
 
 module.exports = {
 
@@ -47,15 +49,47 @@ payment: function(req, res, next) {
 
   var stripeToken = req.body.stripeToken;
   var currentCharges = Math.round(req.body.stripeMoney * 100);
-  stripe.customer.create({
+  stripe.customers.create({
     source: stripeToken,
   }).then(function(customer) {
-    return stripe.charges.create ({
+    return stripe.charges.create({
       amount: currentCharges,
       currency: 'sgd',
       customer: customer.id
     });
+  }).then(function(charge){
+    async.waterfall([
+      function(callback){
+        Cart.findOne({owner: req.user._id}, function(err, cart){
+          callback(err, cart);
+        });
+      },
+      function(cart, callback){
+        User.findOne({_id: req.user._id}, function(err, user) {
+          if (user) {
+            for(var i = 0; i < cart.items.length; i++) {
+              user.history.push({
+                item: cart.items[i].item,
+                paid: cart.items[i].price
+              });
+            }
+            user.save(function(err, user){
+              if(err) return next(err);
+              callback(err, user);
+            });
+          }
+        });
+      },
+      function(user){
+        Cart.update({owner: user._id}, { $set: {items: [], total: 0}}, function(err, updated){
+          if (updated) {
+            res.redirect('/profile');
+          }
+        } );
+      }
+    ])
   });
+
 }
 
 

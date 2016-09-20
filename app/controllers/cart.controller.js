@@ -2,7 +2,7 @@ var Category = require('mongoose').model('Category');
 var Product = require('mongoose').model('Product');
 var Cart = require('mongoose').model('Cart');
 var User = require('mongoose').model('User');
-var stripe = require('stripe')('sk_test_9kiC8pycQEJhDnUbKD4Cgp9V');
+
 
 
 

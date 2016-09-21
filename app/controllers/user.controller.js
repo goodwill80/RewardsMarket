@@ -73,10 +73,13 @@ module.exports = {
 
 //members profile
   profile: function (req, res, next) {
-    User.findOne({_id: req.user._id}, function(err, user){
-      if (err) return next (err);
-      res.render('members/profile', { user: user});
-    })
+    User
+      .findOne({ _id: req.user._id })
+      .populate('history.item')
+      .exec(function(err, foundUser) {
+        if (err) return next (err);
+        res.render('members/profile', {user: foundUser});
+      });
   },
 
 //edit profile

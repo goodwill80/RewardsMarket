@@ -1,56 +1,70 @@
 <%- layout('layout') -%>
 
-<div class="container">
+    <div class="container">
 
-<!-- <div class="row">
-  <div class="col-sm-6 col-md-4">
-    <img class="img-circle img-responsive img-center" src="<%= user.profile.picture %>" alt="">
 
-    <br />
-    <p>Name: <%= user.profile.name %></p>
-    <p>Email: <%= user.email %></p>
+        <h1>Welcome back! <%= user.profile.name %></h1>
 
-    <% if (user.address === "" || typeof user.address === 'undefined') { %>
-      <p>Address: <span style="color: #c0392b; font-weight: bold">You have no address in our records</span></p>
-
-      <% } else { %>
-
-    <p>Address: <%= user.address %></p>
-
-    <% } %>
-    <br>
-    <a href="/edit-profile" class="btn btn-primary btn-lg">Edit Profile</a>
-  </div>
-</div> -->
-
-<h1>Welcome back! <%= user.profile.name %></h1>
-
-<div class="profilequote">
-  "Every human is an artist. The dream of your life is to make beautiful art." <strong>- don Miguel Ruiz</strong>
-  <br>
-  <img id="quoteimg" src="https://s-media-cache-ak0.pinimg.com/236x/1d/4c/9d/1d4c9d57837bb77b202f2a687bbc0ec8.jpg">
-</div>
+        <div class="profilequote">
+            "Every human is an artist. The dream of your life is to make beautiful art." <strong>- don Miguel Ruiz</strong>
+            <br>
+            <img id="quoteimg" src="https://s-media-cache-ak0.pinimg.com/236x/1d/4c/9d/1d4c9d57837bb77b202f2a687bbc0ec8.jpg">
+        </div>
 
 
 
 
-<div id="panelprofile" class="panel panel-info">
-    <img class="img img-center" src="<%= user.profile.picture %>" alt="">
-  <p><strong>Name: </strong><%= user.profile.name %></p>
-  <p><strong>Email: </strong><%= user.email %></p>
-  <p><strong>Points: </strong><%= user.points %></p>
-  <% if (user.address === "" || typeof user.address === 'undefined') { %>
-    <p><strong>Address: </strong><span style="color: red; font-weight: bold">You have no address in our records</span></p>
+        <div id="panelprofile" class="panel panel-info">
+            <img class="img img-center" src="<%= user.profile.picture %>" alt="">
+            <p><strong>Name: </strong>
+                <%= user.profile.name %>
+            </p>
+            <p><strong>Email: </strong>
+                <%= user.email %>
+            </p>
+            <p><strong>Points: </strong>
+                <%= user.points %>
+            </p>
+            <% if (user.address === "" || typeof user.address === 'undefined') { %>
+                <p><strong>Address: </strong><span style="color: red; font-weight: bold">You have no address in our records</span></p>
 
-    <% } else { %>
+                <% } else { %>
 
-  <p><strong>Address: </strong><%= user.address %></p>
-
-
-  <% } %>
-  <br>
-  <a href="/edit-profile" class="btn btn-primary btn-lg">Edit Profile</a>
-</div>
+                    <p><strong>Address: </strong>
+                        <%= user.address %>
+                    </p>
 
 
-</div>
+                    <% } %>
+                        <br>
+                        <a href="/edit-profile" class="btn btn-primary btn-lg">Edit Profile</a>
+        </div>
+
+        <div class="col-md-6">
+            <h2 class="text-center">History</h2>
+
+            <table class="table table-striped sticky-header">
+                <thead>
+                    <tr>
+                        <th>Item's Name</th>
+                        <th>Paid: </th>
+                    </tr>
+                    <tbody>
+                        <% for (var i = 0; i < user.history.length; i++) { %>
+                            <tr>
+                                <td>
+                                    <%= user.history[i].item.name %>
+                                </td>
+                                <td>
+                                    SGD $<%= user.history[i].paid %>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </thead>
+            </table>
+        </div>
+
+
+
+    </div>

@@ -51,53 +51,61 @@ body{
   width: 150%;
   height: 100%;
 }
-/*http://wearesuper.sg/imageferebee/stewart064.jpg*/
+
 .jumbotron {
 position: relative;
 background: url("https://daisiesinbloomblog.files.wordpress.com/2013/03/2012090356775969.jpg") no-repeat center center;
 width:100%;
-height: 300%;
 background-size: 100% 100%;
-
 }
 
+
+
 #jumbo2 {
-  position: relative;
-  background: url("https://www.citibank.com.sg/cpc/images/PC/dtpBg4.jpg") no-repeat center center;
+  /*position: relative;*/
+  background: url("https://static.pexels.com/photos/122260/pexels-photo-122260-large.jpeg") no-repeat center center;
   width:100%;
-  height: 300%;
+  height: 500%;
   background-size: 100% 100%;
 }
 
 .jumbotext {
   color: white;
-  background: rgba(0, 0, 0, 0.5);
-  font-family: 'Playball', cursive;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 45px;
+  letter-spacing: 5px;
+
 }
 
 .jumbo2text{
   width: 50%;
   color: white;
-  background: rgba(0, 0, 0, 0.5);
-  font-family: 'Playball', cursive;
+  background: rgba(0, 0, 0, 0.3);
+  /*font-family: 'Playball', cursive;*/
 }
 
 .font {
-  width: 30%;
+  width: 55%;
 }
 
 #inner {
-    width: 70%;
-    margin: 0 auto;
-    font-size: 40px;
-    font-family: 'Cinzel Decorative', cursive;
+    width: 45%;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Roboto', sans-serif, cursive;
+    letter-spacing: 3px;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
 }
+
 
 /*signup page*/
 .signupcover {
   color: rgb(255, 255, 255);
     margin-top: -50px;
-    height: 740px;
+    height: 840px;
     background: url("http://dyedesigns.com/golf/wp-content/uploads/2010/01/e-PoundRidgeGC5bSunset1.jpg") no-repeat scroll 0px 100% / cover transparent;
 }
 
@@ -110,15 +118,15 @@ background-size: 100% 100%;
 /*login page*/
 .logincover{
     color: rgb(255, 255, 255);
-    margin-top: -48px;
-    height: 748px;
+    margin-top: -50px;
+    height: 840px;
     background: url("http://www.italianluxuryboat.com/wp-content/uploads/2014/01/Italian-Luxury-boat-22.jpg") no-repeat scroll 0px 100% / cover transparent;
 }
 
 .cartcover {
     /*color: rgb(255, 255, 255);*/
     margin-top: -50px;
-    height: 740px;
+    height: 840px;
     background: url("http://www.freewallpaperfullhd.com/wp-content/uploads/2015/03/beautiful-hd-desktop-background-wallpapers-of-celebrations_2_21004.jpg") no-repeat scroll 0px 100% / cover transparent;
 }
 
@@ -149,4 +157,19 @@ background-size: 100% 100%;
 
 label {
   color: black;
+}
+
+#thumb {
+  width: 360px;
+  height: 350px;
+}
+
+.thumbnail {
+  width: 360px;
+  height: 450px;
+}
+
+#homeimage {
+  width: 320px;
+  height: 200px;
 }
